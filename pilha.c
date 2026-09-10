@@ -11,12 +11,15 @@ typedef struct{
 void init (Stack *s) {
     s->top=-1;
 }
+
 int vazio (Stack *s) {
     return s->top == -1;
 }
+
 int cheio (Stack *s) {
     return s->top == MAX-1;
 }
+
 void push(Stack *s, int val) {
     if(!cheio(s)){
         s->data[++s->top] = val;
@@ -26,6 +29,7 @@ void push(Stack *s, int val) {
         printf("Erro ao adicionar número");
     }
 }
+
 int pop(Stack *s) {
     if (!vazio(s)){
         printf("Pop realiazdo com sucesso\n");
@@ -36,6 +40,7 @@ int pop(Stack *s) {
         return 0;
     }
 }
+
 int peek(Stack *s) {
     if (vazio(s)) {
         printf("Pilha vazia\n");
@@ -43,6 +48,7 @@ int peek(Stack *s) {
     }
     return s->data[s->top];
 }
+
 int main() {
     int x=0;
     Stack s;
